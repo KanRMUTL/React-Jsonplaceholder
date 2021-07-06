@@ -1,5 +1,5 @@
 import React from 'react';
-import { List, ListItem, ListItemText, Typography } from '@material-ui/core';
+import { List, ListItem, ListItemText } from '@material-ui/core';
 import { Route } from '../route/path';
 import { Link } from 'react-router-dom';
 interface Props {
