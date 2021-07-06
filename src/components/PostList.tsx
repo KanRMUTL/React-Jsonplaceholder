@@ -1,6 +1,6 @@
 import React from 'react';
 import { useRouteMatch, Link } from 'react-router-dom';
-import { Grid, Button } from '@material-ui/core';
+import { Button, Grid } from '@material-ui/core';
 import Post from './hooks/usePost';
 import CardWithContent from './CardWithContent';
 interface Props {
@@ -23,7 +23,7 @@ function PostList({ posts }: Props) {
     <Grid container spacing={3}>
       {posts.map((p) => {
         return (
-          <Grid item xs={1} sm={6} md={4} key={p.id}>
+          <Grid item xs={12} sm={6} md={4}>
             <CardWithContent
               avatarChar={p.id}
               headerTitle={p.title}
