@@ -10,6 +10,8 @@ const useMovie = ({ keyword }: Props) => {
   useEffect(() => {
     if (keyword) {
       fetchMovies(keyword, setMovieResponse);
+    } else {
+      setMovieResponse(undefined);
     }
   }, [keyword]);
   return movieResponse;
