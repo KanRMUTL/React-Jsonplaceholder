@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Box } from '@material-ui/core';
 import { BrowserRouter } from 'react-router-dom';
 import SwitchRoute from './route/SwitchRoute';
 import { DrawerProvider } from './components/useContext/DrawerContext';
 import Drawer from './components/Drawer';
 import AppBar from './components/AppBar';
+
 function App() {
   const [open, setOpen] = useState(false);
+  useEffect(() => {}, []);
   return (
     <BrowserRouter>
       <DrawerProvider value={{ open, setOpen: setOpen }}>
