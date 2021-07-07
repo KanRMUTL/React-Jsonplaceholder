@@ -1,20 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Box } from '@material-ui/core';
 import { BrowserRouter } from 'react-router-dom';
-import { routes } from './route/path';
-import ListItemLink from './components/ListItemLink';
 import SwitchRoute from './route/SwitchRoute';
+import { DrawerProvider } from './components/useContext/DrawerContext';
+import Drawer from './components/Drawer';
+import AppBar from './components/AppBar';
+
 function App() {
+  const [open, setOpen] = useState(false);
+  useEffect(() => {}, []);
   return (
     <BrowserRouter>
-      <Box height={100} display="flex">
-        <Box flexGrow={1} display={{ xs: 'none', sm: 'block' }}>
-          <ListItemLink routes={routes} />
-        </Box>
-        <Box flexGrow={9}>
+      <DrawerProvider value={{ open, setOpen: setOpen }}>
+        <AppBar onClickMenu={() => setOpen(true)} />
+        <Drawer />
+        <Box height={100} display="flex">
           <SwitchRoute />
         </Box>
-      </Box>
+      </DrawerProvider>
     </BrowserRouter>
   );
 }

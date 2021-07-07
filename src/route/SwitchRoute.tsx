@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Home from '../components/Home';
+import MovieDB from '../components/MovieDBContainer';
 import Post from '../components/PostContainer';
 import PostDetail from '../components/PostDetail';
 
@@ -8,7 +8,7 @@ function SwitchRoute() {
   return (
     <Switch>
       <Route exact path="/">
-        <Home></Home>
+        <MovieDB></MovieDB>
       </Route>
       <Route exact path="/post">
         <Post></Post>

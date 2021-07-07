@@ -6,7 +6,7 @@ export interface Route {
 const routes: Route[] = [
   {
     path: '/',
-    label: 'Home',
+    label: 'Movie DB',
   },
   {
     path: '/post',
