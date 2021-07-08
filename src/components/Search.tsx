@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { Paper as PaperMUI, InputBase, IconButton } from '@material-ui/core';
+import { Paper as PaperMUI, InputBase as InputBaseMUI, IconButton } from '@material-ui/core';
 import { Search as SearchIcon } from '@material-ui/icons';
 import styled from 'styled-components';
-
 interface Props {
   onChange?: (value: string) => void;
   onSearch: (keyword: string) => void;
@@ -10,6 +9,18 @@ interface Props {
 
 const Paper = styled(PaperMUI)`
   padding-left: 12px;
+
+  ${({ theme }) => theme.breakpoints.down('md')} {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+`;
+
+const InputBase = styled(InputBaseMUI)`
+  ${({ theme }) => theme.breakpoints.down('md')} {
+    width: 100%;
+  }
 `;
 
 function Search({ onSearch }: Props) {
