@@ -27,6 +27,7 @@ const MovieList = ({ movies }: Props) => {
             description={m.overview}
             image={`${imageUrl}/${m.poster_path}`}
             adult={m.adult}
+            rating={m.vote_average ? m.vote_average / 2 : 0}
           />
         </MovieItem>
       ))}

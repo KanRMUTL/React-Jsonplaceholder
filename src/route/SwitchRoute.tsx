@@ -8,7 +8,7 @@ function SwitchRoute() {
   return (
     <Switch>
       <Route exact path="/">
-        <MovieDB></MovieDB>
+        <MovieDB />
       </Route>
       <Route exact path="/post">
         <Post></Post>

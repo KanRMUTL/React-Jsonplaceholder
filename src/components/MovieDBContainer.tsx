@@ -1,10 +1,11 @@
 import React from 'react';
-import { Box } from '@material-ui/core';
+import { Box, ListItem, Backdrop, CircularProgress, ListItemText } from '@material-ui/core';
 import { useState } from 'react';
 import useMovie from './hooks/useMovie';
 import MovieList from './MovieList';
 import Search from './Search';
 import styled from 'styled-components';
+import EmptyState from './EmptyState';
 
 const BoxSearch = styled(Box)`
   padding: 0;
@@ -31,7 +32,12 @@ function MovieDBContainer() {
         <Search onSearch={setKeyword} />
       </BoxSearch>
       <Box display="flex">
-        <MovieList movies={movieResponse?.results} />
+        {movieResponse?.results?.length ? (
+          <MovieList movies={movieResponse?.results} />
+        ) : (
+          <EmptyState label="No Result." />
+        )}
+        {}
       </Box>
     </Box>
   );
