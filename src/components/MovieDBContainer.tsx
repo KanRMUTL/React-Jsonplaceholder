@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, ListItem, Backdrop, CircularProgress, ListItemText } from '@material-ui/core';
+import { Box } from '@material-ui/core';
 import { useState } from 'react';
 import useMovie from './hooks/useMovie';
 import MovieList from './MovieList';
@@ -27,7 +27,7 @@ function MovieDBContainer() {
   const [keyword, setKeyword] = useState('');
   const movieResponse = useMovie({ keyword });
   return (
-    <Box display="flex" flexDirection="column" width="100%">
+    <Box display="flex" flexDirection="column" width="100%" zIndex="obileStepper">
       <BoxSearch display="flex" justifyContent="flex-end" paddingTop={2} paddingRight={2}>
         <Search onSearch={setKeyword} />
       </BoxSearch>
@@ -37,7 +37,6 @@ function MovieDBContainer() {
         ) : (
           <EmptyState label="No Result." />
         )}
-        {}
       </Box>
     </Box>
   );
